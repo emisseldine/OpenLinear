@@ -1,0 +1,22 @@
+import numpy as np
+
+x = np.array([1,2,3,4])
+print(x)
+print(x[0],x[3])
+print(x[1:2])
+print(x[1:])
+
+x[0] = -5
+x[1] = 6
+print(x)
+
+x[-1] = 0
+x[-4] = 10
+print(x,"\n")
+
+x = np.array([1,2])
+y = np.array([3,4,5])
+z = np.concatenate((x,y,[6,8,9,10]))
+print(z)
+
+print(np.zeros(5),np.ones(3))
