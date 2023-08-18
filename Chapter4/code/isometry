@@ -1,0 +1,9 @@
+import numpy as np
+
+#Define angle function, which returns radians
+ang = lambda u,v : np.arccos(u @ v / (np.linalg.norm(u)*np.linalg.norm(v)))
+    
+x = np.array([1,2,3])
+y = np.array([0,-3,5])
+print("In radians: ", ang(x,y))
+print("In degrees: ", ang(x,y) * (360/(2*np.pi)))
