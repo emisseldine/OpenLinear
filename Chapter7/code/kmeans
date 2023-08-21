@@ -1,0 +1,44 @@
+\begin{lstlisting}[language=Python]
+import matplotlib.pyplot as plt
+plt.style.use('seaborn-whitegrid')
+
+import numpy as np
+from sklearn.cluster import KMeans
+
+k = 4
+
+plt.ion()
+X = np.concatenate([[0.3*np.random.randn(2) for i in range(100)], 
+                    [[0,1] + 0.5*np.random.randn(2) for i in range(100)], 
+                    [[1,1] + 0.4* np.random.randn(2) for i in range(100)],
+                    [[1,-1] + 0.3* np.random.randn(2) for i in range(100)],
+                    [[-0.5,1] + 0.25* np.random.randn(2) for i in range(100)],
+                    [[0.5,-1] + 0.1* np.random.randn(2) for i in range(100)],
+                    [[0.5,-0.5] + 0.3* np.random.randn(2) for i in range(100)],
+                    [[1,-0.25] + 0.25* np.random.randn(2) for i in range(100)],
+                    [[1.75,-0.75] + 0.2* np.random.randn(2) for i in range(100)],
+                    [[1,0] + 0.5* np.random.randn(2) for i in range(100)]])
+
+x = np.linspace(-2, 3, 10)
+plt.xlim(-2,3)
+plt.ylim(-2,3)
+plt.scatter( X[:,0],X[:,1])
+plt.show()
+
+
+kmeans = KMeans(n_clusters=k, random_state=0).fit(X)
+labels = kmeans.labels_
+reps = kmeans.cluster_centers_
+J_clust = kmeans.inertia_
+grps = [[X[i,:] for i in range(len(X)) if labels[i]==j] for j in range(k)]
+for i in range(k):
+    plt.scatter([c[0] for c in grps[i]],[c[1] for c in grps[i]])
+
+if k==2:
+    plt.plot(x, -1*(reps[0,0]-reps[1,0])/(reps[0,1]-reps[1,1])*(x - 1/2*(reps[0,0]+reps[1,0])) + 1/2*(reps[0,1]+reps[1,1]), linestyle="-.", color="red")
+
+plt.xlim(-2,3)
+plt.ylim(-2,3)
+plt.show()
+print(J_clust)
+\end{lstlisting}
