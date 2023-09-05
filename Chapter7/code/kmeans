@@ -1,4 +1,3 @@
-\begin{lstlisting}[language=Python]
 import matplotlib.pyplot as plt
 plt.style.use('seaborn-whitegrid')
 
@@ -41,4 +40,3 @@ plt.xlim(-2,3)
 plt.ylim(-2,3)
 plt.show()
 print(J_clust)
-\end{lstlisting}
