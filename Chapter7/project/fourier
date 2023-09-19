@@ -14,7 +14,12 @@ f = np.piecewise(x, [((-4*np.pi <= x) & (x < -3*np.pi)),
                      ((np.pi <= x) & (x < 2*np.pi)),
                      ((2*np.pi <= x) & (x < 3*np.pi))], 
                  [1,0,1,0,1,0,1])
+                    #Recall that np.sin(x) gives the sine function in Python, where the angle is measured in radians.
 plt.plot(x,f)
 
-#Recall that np.sin(x) gives the sine function in Python, where the angle is measured in radians.
+#create and solve your linear system here. You will need a coefficient matrix A and an augmented column b
+
+#c = np.linalg.solve(A,b) #uncomment this line when you have set up the linear system and are ready to solve it
+#plt.plot(x,1/2+sum([c[j]*np.sin((2*j+1)*x) for j in range(25)])) #uncomment this line when you are ready to graph g
+
 plt.show()
