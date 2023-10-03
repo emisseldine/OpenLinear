@@ -17,9 +17,11 @@ AG = np.array([[0,1,1,1,0,0],#A
 AG_ten = np.linalg.matrix_power(AG, 10)
 print("The number of paths from A to D of length 10 is ", ) 
 #what from A^10 tells us about the paths from A to D of length 10?
+#solution = 1560
 
 #next, compute A^20 and find the number of paths from B to F of length 20. 
 print("The number of paths from B to F of length 20 is ", ) 
+#solution = 5640122
 
 
 ###EXERCISE 2 #################################
