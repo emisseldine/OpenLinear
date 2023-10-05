@@ -1,7 +1,7 @@
 import numpy as np
 
 ### EXERCISE 1#############################
-#the coefficient matrix A and augmented column b for [A|b]
+#Solve the linear system [A|b]
 A = np.array([[6, 5, 0], [4, 0, 3], [0, 2, 1]])
 b = np.array([13, 5, 5])
 
