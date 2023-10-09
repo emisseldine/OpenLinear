@@ -67,10 +67,15 @@ def HillEncrypt(plaintext, A, b):
     P = np.array(PadMessage(plaintext, 1e7, len(A)))
     return np.array([A @ p + b for p in P])
 
-def HillDecrypt(ciphertext, A, b):
-    D = # Here is the missing code. One line is sufficient to fill in the missing piece.
-    #D should be an np.array consists of n-vectors which have been decrypted in the affine sense
-    #The following line of code will take that np.array and turn it into a list of lists of integers
-    #DepadMessage will take that list of list of integers and turn it back into the plaintext.
-    D = [ [int(round(D[i,j],0)) for j in range(len(D[i]))] for i in range(len(D))]
-    return DepadMessage(D)
+#Example 
+A = np.array([[1,2],[3,4]])
+b = np.array([5,6])
+print(HillEncrypt("Linear Algebra is Awesome!", A, b))
+
+# def HillDecrypt(ciphertext, A, b):
+#     D = # Here is the missing code. One line is sufficient to fill in the missing piece.
+#     #D should be an np.array consists of n-vectors which have been decrypted in the affine sense
+#     #The following line of code will take that np.array and turn it into a list of lists of integers
+#     #DepadMessage will take that list of list of integers and turn it back into the plaintext.
+#     D = [ [int(round(D[i,j],0)) for j in range(len(D[i]))] for i in range(len(D))]
+#     return DepadMessage(D)
