@@ -1,4 +1,15 @@
-###VERIFY ############################
+import numpy as np
+
+def row_scaling(coefficient_matrix, augmented_matrix, scalar, i):
+    #write your code here
+
+def row_replacement(coefficient_matrix, augmented_matrix, scalar, i, j):
+    #write your code here
+
+def row_interchange(coefficient_matrix, augmented_matrix, i, j):
+    #write your code here
+
+### VERIFICATION ############################
 aug_matrix = lambda A,B : np.array([np.concatenate((A[i],B.reshape(len(A),-1)[i])) for i in range(len(A))])
 
 A = np.array([[1,2,3],[5,6,7], [9,10,11]])
