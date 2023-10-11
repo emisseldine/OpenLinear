@@ -1,19 +1,19 @@
 import numpy as np
 
 def row_scaling(coefficient_matrix, augmented_matrix, scalar, i):
-    #Your code from Project Elementary Row Operations
+    #your code from Project Elementary Row Operations
 
 def row_replacement(coefficient_matrix, augmented_matrix, scalar, i, j):
-    #Your code from Project Elementary Row Operations
+    #your code from Project Elementary Row Operations
 
 def row_interchange(coefficient_matrix, augmented_matrix, i, j):
-    #Your code from Project Elementary Row Operations
+    #your code from Project Elementary Row Operations
 
 def zero_below(coefficient_matrix, constant_matrix, pivot):
-    #Write your code here
+    #write your code here
 
 def zero_above(coefficient_matrix, constant_matrix, pivot):
-    #Write your code here
+    #write your code here
 
 ###VERIFY ############################
 aug_matrix = lambda A,B : np.array([np.concatenate((A[i],B.reshape(len(A),-1)[i])) for i in range(len(A))])
