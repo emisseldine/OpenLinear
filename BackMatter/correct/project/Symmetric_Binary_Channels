@@ -1,16 +1,16 @@
 import numpy as np
 
 ## TASK 1 ##################
-def encode_partitycheck(message):
+def encode_paritycheck(message):
     #write your code here
 
-def detect_partitycheck(codeword):
+def detect_paritycheck(codeword):
     #write your code here
 
 decode_paritycheck = lambda codeword : #write your code here 
 
 print(" Task 1\n")
-print(encode_partitycheck([1,1,0,1]), "\n")
+print(encode_paritycheck([1,1,0,1]), "\n")
 
 #The last bit is a parity-check bit.
 Codewords = np.array([[0,0,1,1,0,1,1],
@@ -19,7 +19,7 @@ Codewords = np.array([[0,0,1,1,0,1,1],
               [1,1,0,0,1,1,1],
               [1,1,1,1,1,1,0]])
 for c in Codewords:
-    if detect_partitycheck(c):
+    if detect_paritycheck(c):
         print("Error: ", c)
     else:
         print(decode_paritycheck(c))
