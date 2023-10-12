@@ -1,1 +1,0 @@
-convert_coord = lambda coords, radius : radius*np.array([np.cos(coords[0]*np.pi/180)*np.sin(coords[1]*np.pi/180), np.cos(coords[0]*np.pi/180)*np.cos(coords[1]*np.pi/180), np.sin(coords[0]*np.pi/180)])
