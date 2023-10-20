@@ -804,8 +804,9 @@ def house_sales_data():
         "condo": X[:,4],         # 1 if condo, 0 otherwise 
         "location": X[:,0]}     # location (1,2,3,4)
 
-y = house_sales_data()["price"]
-x = np.column_stack((house_sales_data()["area"], house_sales_data()["beds"], np.ones(len(y)))) 
+D = house_sales_data()
+y = D["price"]
+x = np.column_stack((D["area"], D["beds"], np.ones(len(y)))) 
 a_hat = np.linalg.lstsq(x,y,rcond=None)[0]
 
 print(a_hat)
@@ -827,10 +828,9 @@ print("y_hat = $" + str(int(round(y_hat(x),0))*1000))
 print("y = $" + str(int(y*1000)), "\n")
 
 plt.ion()
-D = house_sales_data()
 
 predicted = b + a @ [D['area'], D['beds']]
-plt.scatter(D['price'], predicted)
+plt.scatter(D['price'], predicted, color='b')
 plt.plot((0,800),(0,800) ,ls='--', c = 'r')
 plt.ylim(0,800)
 plt.xlim(0,800)
