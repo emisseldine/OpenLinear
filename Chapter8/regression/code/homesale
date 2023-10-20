@@ -817,19 +817,19 @@ b = a_hat[-1] #54.4017
 y_hat = lambda x: a @ x + b
 
 #Evaluate regression model prediction
-x = np.array([0.846, 1])
-y = 115
-print("y_hat = $" + str(int(round(y_hat(x),0))*1000))
-print("y = $" + str(int(y*1000)), "\n")
+x1 = np.array([0.846, 1])
+y1 = 115
+print("y_hat = $" + str(int(round(y_hat(x1),0))*1000))
+print("y = $" + str(int(y1*1000)), "\n")
 
-x = np.array([1.324, 2])
-y = 234.50
-print("y_hat = $" + str(int(round(y_hat(x),0))*1000))
-print("y = $" + str(int(y*1000)), "\n")
+x2 = np.array([1.324, 2])
+y2 = 234.50
+print("y_hat = $" + str(int(round(y_hat(x2),0))*1000))
+print("y = $" + str(int(y1*1000)), "\n")
 
 plt.ion()
 
-predicted = b + a @ [D['area'], D['beds']]
+predicted = a_hat @ x.T
 plt.scatter(D['price'], predicted, color='b')
 plt.plot((0,800),(0,800) ,ls='--', c = 'r')
 plt.ylim(0,800)
