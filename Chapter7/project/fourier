@@ -1,6 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
-plt.style.use('seaborn-whitegrid')
+plt.style.use('seaborn-v0_8-whitegrid')#replace with 'seaborn-whitegrid' if error occurs
 
 plt.ion()
 plt.axis([-10,10,-3,3])
