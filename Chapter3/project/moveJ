@@ -24,12 +24,10 @@ plt.ion()
 plt.axis([-9,3,-7,7])
 
 #Transform the set of points   
-    
+
+
 #Show the sets of points
 plt.scatter([c[0] for c in points], [c[1] for c in points])
-    
 t = np.linspace(-10, 10, 100)
 plt.plot(t,t*np.tan(5*np.pi/6), "-.r")
-    
-    
 plt.show()
