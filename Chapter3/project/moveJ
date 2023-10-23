@@ -4,14 +4,11 @@ plt.style.use('seaborn-v0_8-whitegrid')#replace with 'seaborn-whitegrid' if erro
 
 dilate = lambda a, b: np.array([[a, 0], [0, b]])
 
-rotate = lambda theta: np.array([[np.cos(theta), -np.sin(theta)],
-[np.sin(theta), np.cos(theta)]])
+rotate = lambda theta: np.array([[np.cos(theta), -np.sin(theta)],[np.sin(theta), np.cos(theta)]])
 
-reflect = lambda theta: np.array([[np.cos(2*theta), np.sin(2*theta)],
-[np.sin(2*theta), -np.cos(2*theta)]])
+reflect = lambda theta: np.array([[np.cos(2*theta), np.sin(2*theta)],[np.sin(2*theta), -np.cos(2*theta)]])
 
-project = lambda theta: 1/2*np.array([[1+np.cos(2*theta), np.sin(2*theta)],
-[np.sin(2*theta), 1-np.cos(2*theta)]])
+project = lambda theta: 1/2*np.array([[1+np.cos(2*theta), np.sin(2*theta)],[np.sin(2*theta), 1-np.cos(2*theta)]])
 
 #create a scatter plot for "J"
 points = np.concatenate([[[1+(0.1+0.01*i),1] for i in range(81)], 
