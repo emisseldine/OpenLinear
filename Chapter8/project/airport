@@ -1,6 +1,10 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
+# # Load as a dataframe
+# import seaborn as sns
+# flights = sns.load_dataset('flights')
+
 #Airport Data # [year, month, # of flights that month]
 flights = [[1949,	'January',	112],
             [1949,	'February',	118],
