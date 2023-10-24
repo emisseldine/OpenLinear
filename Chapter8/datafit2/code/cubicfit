@@ -120,6 +120,7 @@ for g in polys:
 #Graph Scatterplot
 plt.ion()
 plt.scatter(x,y)
+plt.axis([-1,1,-0.7,0.7])
 plt.show()
 
 #Graph Polynomials
