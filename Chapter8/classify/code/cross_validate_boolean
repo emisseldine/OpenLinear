@@ -20,16 +20,9 @@ def cross_validate_boolean(X,y,folds=5):
 
 ###################### IRIS EXAMPLE ##################################################
 from sklearn.datasets import load_iris
-iris_names = load_iris()['target_names']
 iris_types = load_iris()['target']
-
-iris_feature = load_iris()['feature_names']
 iris_data = np.array(load_iris()['data'])
 
-# print(iris_names)
-# print(iris_types)
-# print(iris_feature)
-# print(iris_data)
 n = len(iris_types)
 X = np.column_stack([iris_data, np.ones(n)])
 
