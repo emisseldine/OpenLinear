@@ -37,7 +37,5 @@ for j in range(len(iris_names)):
 print("Training Confusion Matrix\n", train_matrix, "\n")    
 print("Test Confusion Matrix\n", test_matrix)
 
-accuracy =  np.array([[np.trace(train_matrix[j])/sum(sum(train_matrix[j])), 
-                  np.trace(test_matrix[j])/sum(sum(test_matrix[j]))] for j in range(5)])
-print("\nAccuracy = [training, test]\n", 
-      accuracy, "\n\n", sum(accuracy)/5, "\n\n")
+accuracy =  np.array([[np.trace(train_matrix[j])/sum(sum(train_matrix[j])),np.trace(test_matrix[j])/sum(sum(test_matrix[j]))] for j in range(5)])
+print("\nAccuracy = [training, test]\n",accuracy,"\n\n", sum(accuracy)/5, "\n\n")
