@@ -2,7 +2,6 @@ import numpy as np
 from scipy.stats import pearsonr as pearson
 import matplotlib.pyplot as plt
 
-
 #cross validate the linear system Xc = y
 def cross_validate(X,y,folds=5,display=False,label="Data",lower_x=0,upper_x=10,lower_y=0,upper_y=10):
     plt.ion()
