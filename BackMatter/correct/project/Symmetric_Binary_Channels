@@ -13,16 +13,16 @@ print(" Task 1\n")
 print(encode_paritycheck([1,1,0,1]), "\n")
 
 #The last bit is a parity-check bit.
-Codewords = np.array([[0,0,1,1,0,1,1],
-              [1,1,1,0,1,1,0],
-              [1,0,0,1,0,1,1],
-              [1,1,0,0,1,1,1],
-              [1,1,1,1,1,1,0]])
-for c in Codewords:
-    if detect_paritycheck(c):
-        print("Error: ", c)
+Words = np.array([[0,0,1,1,0,1,1],
+                  [1,1,1,0,1,1,0],
+                  [1,0,0,1,0,1,1],
+                  [1,1,0,0,1,1,1],
+                  [1,1,1,1,1,1,0]])
+for w in Words:
+    if detect_paritycheck(w):
+        print("Error: ", w)
     else:
-        print(decode_paritycheck(c))
+        print(decode_paritycheck(w))
         
 ## TASK 2 ##################  
 print("\n\n Task 2\n")
@@ -33,17 +33,17 @@ def encode_triplerep(message):
 def decode_triplerep(codeword):
     #write your code here
         
-Words = np.array([[1, 1, 0, 0],
-              [0, 0, 1, 1],
-              [0, 1, 1, 0]])
+Words = np.array([[1,1,0,0],
+                  [0,0,1,1],
+                  [0,1,1,0]])
 for w in Words:
     print(encode_triplerep(w))
 print("\n")
 
-Codewords = np.array([[0, 0, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1],
-                      [0, 1, 0, 0, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1],
-                      [1, 0, 0, 0, 1, 1, 1, 0, 1, 1, 0, 1, 0, 0, 0, 1, 1, 1],
-                      [0, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1],
-                      [1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 1]])
+Codewords = np.array([[0,0,1,1,0,1,0,0,1,0,0,1,0,0,1,1,0,1],
+                      [0,1,0,0,1,1,1,1,1,0,1,0,1,1,1,0,1,1],
+                      [1,0,0,0,1,1,1,0,1,1,0,1,0,0,0,1,1,1],
+                      [0,1,0,0,1,1,1,1,0,0,1,1,1,1,0,0,0,1],
+                      [1,1,1,1,1,1,1,0,0,1,0,0,1,0,1,1,1,1]])
 for c in Codewords:
     print(decode_triplerep(c))
