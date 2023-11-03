@@ -3,8 +3,8 @@ import matplotlib.pyplot as plt
 
 def data_fit_regular(X, y, lamb):
     m,n = X.shape
-    A = np.concatenate((X,np.sqrt(lamb)*np.identity(n)))
-    b = np.concatenate((y,np.zeros(n)))
+    A = np.concatenate((np.array(X),np.sqrt(lamb)*np.identity(n)))
+    b = np.concatenate((np.array(y),np.zeros(n)))
     return np.linalg.lstsq(A,b, rcond=None)[0]
 
 lamb = 0.1
