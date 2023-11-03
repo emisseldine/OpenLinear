@@ -2,12 +2,15 @@ import numpy as np
 
 def row_scaling(coefficient_matrix, augmented_matrix, scalar, i):
     #write your code here
+    #returns scaled_coefficient_matrix, scaled_constant_matrix 
 
 def row_replacement(coefficient_matrix, augmented_matrix, scalar, i, j):
     #write your code here
+    #returns replaced_coefficient_matrix, replaced_constant_matrix
 
 def row_interchange(coefficient_matrix, augmented_matrix, i, j):
     #write your code here
+    #returns interchanged_coefficient_matrix, interchanged_constant_matrix
 
 ### VERIFICATION ############################
 aug_matrix = lambda A,B : np.array([np.concatenate((A[i],B.reshape(len(A),-1)[i])) for i in range(len(A))])
