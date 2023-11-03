@@ -3,8 +3,8 @@ import matplotlib.pyplot as plt
 
 def multi_lstsq(As, bs, lambdas):
     k = len(lambdas)
-    A = np.concatenate([np.sqrt(lambdas[i])*As[i] for i in range(k)])
-    b = np.concatenate([np.sqrt(lambdas[i])*bs[i] for i in range(k)])
+    A = np.concatenate([np.sqrt(lambdas[i])*np.array(As[i]) for i in range(k)])
+    b = np.concatenate([np.sqrt(lambdas[i])*np.array(bs[i]) for i in range(k)])
     return np.linalg.lstsq(A,b, rcond=None)[0]
 
 As = np.array([np.random.normal(size = (10,5)),
