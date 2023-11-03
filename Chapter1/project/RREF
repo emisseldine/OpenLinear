@@ -17,20 +17,25 @@ def zero_above(coefficient_matrix, constant_matrix, pivot):
 
 def forward_phase(coefficient_matrix, constant_matrix):
     #write your code here
+    #returns reduced_coefficient_matrix, reduced_constant_matrix, pivots
 
 def backward_phase(coefficient_matrix, constant_matrix, pivots):
     #write your code here
+    #returns reduced_coefficient_matrix, reduced_constant_matrix
 
 def RREF(coefficient_matrix, constant_matrix):
     #write your code here
+    #returns reduced_coefficient_matrix, reduced_constant_matrix
     
 def IsIndependent(vectors):
     #write your code here
+    #returns True or False
 
 def matrix_inverse(matrix):
     #write your code here
+    #returns inverse of matrix
 
-###VERIFY ############################
+### VERIFICATION ############################
 aug_matrix = lambda A,B : np.array([np.concatenate((A[i],B.reshape(len(A),-1)[i])) for i in range(len(A))])
 
 A = np.array([[1,1,2,3],[5,5,6,7], [9,9,10,11]])
