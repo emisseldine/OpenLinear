@@ -1,5 +1,4 @@
 import numpy as np
-import matplotlib.pyplot as plt
 
 def house_sales_data():
     # 774 House sales in Sacramento area.
@@ -803,7 +802,6 @@ def house_sales_data():
         "baths": X[:,2],         # number of bathrooms
         "condo": X[:,4],         # 1 if condo, 0 otherwise 
         "location": X[:,0]}     # location (1,2,3,4)
-
 D = house_sales_data()
 y = D["price"]
 x = np.column_stack((D["area"], D["beds"], np.ones(len(y)))) 
@@ -827,16 +825,7 @@ y2 = 234.50
 print("y_hat = $" + str(int(round(y_hat(x2),0))*1000))
 print("y = $" + str(int(y1*1000)), "\n")
 
-plt.ion()
-
 predicted = a_hat @ x.T
-plt.scatter(D['price'], predicted, color='b')
-plt.plot((0,800),(0,800) ,ls='--', c = 'r')
-plt.ylim(0,800)
-plt.xlim(0,800)
-plt.xlabel('Actual Price')
-plt.ylabel('Predicted Price')
-plt.show()
 
 r = D['price'] - predicted                  # vector of predicted errors
 print("average = $" + str(round(np.average(r)*1000,2)))
@@ -847,3 +836,13 @@ de_predicted = predicted-np.average(predicted)
 de_y =  D['price'] - np.average(D['price'])        
 print("correlation = " + str(np.inner(de_predicted, de_y )
                              /np.linalg.norm(de_predicted)/np.linalg.norm(de_y)), "\n")
+
+# Graphing
+import matplotlib.pyplot as plt
+plt.scatter(D['price'], predicted, color='b')
+plt.plot((0,800),(0,800) ,ls='--', c = 'r')
+plt.ylim(0,800)
+plt.xlim(0,800)
+plt.xlabel('Actual Price')
+plt.ylabel('Predicted Price')
+plt.show()
