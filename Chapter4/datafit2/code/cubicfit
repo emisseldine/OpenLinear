@@ -1,5 +1,4 @@
 import numpy as np
-import matplotlib.pyplot as plt
 
 points = np.array([[ 0.6346537948227042, -0.25053562659185047],
                    [ 0.677482051626668, -0.25296380366915916],
@@ -118,7 +117,7 @@ for g in polys:
     print(np.sqrt(np.mean((y-np.polyval(g,x))**2)))
 
 #Graph Scatterplot
-plt.ion()
+import matplotlib.pyplot as plt
 plt.scatter(x,y)
 plt.axis([-1,1,-0.7,0.7])
 plt.show()
