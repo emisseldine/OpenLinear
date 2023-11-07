@@ -103,12 +103,6 @@ points = np.array([[ -1.4683000758467482, -3.6948838397506325],
 x = points[:,0]
 y = points[:,1]
 
-#Graph Scatterplot
-plt.ion()
-plt.axis([-2.1, 2, -6, -1.5])
-plt.scatter(x,y)
-plt.show()
-
 #rows of coefficient matrix associated to piecewise linear fit
 piecewise_row = lambda x, cusps : np.concatenate(([1,x], [np.maximum(x-a, 0) for a in cusps]))
 
@@ -124,8 +118,14 @@ print(np.sqrt(np.mean((y-A@f)**2)))
 print(np.sqrt(np.mean((y-np.polyval(f3,x))**2)))
 
 
-#Graph piecewise linear and cubic fits
+#Graph Scatterplot
 import matplotlib.pyplot as plt
+plt.ion()
+plt.axis([-2.1, 2, -6, -1.5])
+plt.scatter(x,y)
+plt.show()
+
+#Graph piecewise linear and cubic fits
 t = np.linspace(-2,2,num = 100)
 yhat = np.array([piecewise_row(x,cusps) for x in t])@f
 
