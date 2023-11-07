@@ -8,7 +8,6 @@ def lstsq_constraint(A, b, C, d):
     KKTb = np.hstack((2*A.T @ b, d))
     return np.linalg.lstsq(KKT, KKTb, rcond=None)[0][:-n]
 
-## Example 1
 V = np.array([[0.97,1.86,0.41], 
               [1.23,2.18,0.53], 
               [0.80,1.24,0.62], 
