@@ -1,5 +1,4 @@
 import numpy as np
-import matplotlib.pyplot as plt
 
 # Hourly temperature at LAX in May 2016 in a vector of length 31*24 = 744.  Measurements are hourly at 12:53 AM to 11:53PM.
 t = np.array([
@@ -34,7 +33,6 @@ t = np.array([
 60.1, 60.1, 60.1, 60.1, 60.1, 59.0, 60.1, 61.0, 62.1, 64.9, 64.9, 66.0, 66.9, 66.9, 66.0, 66.0, 66.0, 64.0, 62.1, 61.0, 60.1, 60.1, 60.1, 59.0,
 59.0, 59.0, 57.9, 57.9, 59.0, 60.1, 60.1, 61.0, 63.0, 63.0, 64.0, 64.9, 66.9, 68.0, 66.0, 66.0, 64.9, 63.0, 62.1, 61.0, 60.1, 61.0, 60.1, 59.0,
 59.0, 59.0, 59.0, 59.0, 60.1, 60.1, 61.0, 61.0, 62.1, 63.0, 63.0, 64.9, 68.0, 68.0, 68.0, 66.0, 64.9, 63.0, 62.1, 62.1, 62.1, 62.1, 62.1, 63.0 ])
-
 T = len(t)
 l = 8 #lag
 y = t[l:] #first period removed, values to predict
@@ -44,7 +42,7 @@ coeffs = np.linalg.lstsq(A,y, rcond=None)[0]
 y_hat = A @ coeffs
 
 #Graph Time Series
-plt.ion()
+import matplotlib.pyplot as plt
 plt.plot(range(24*31), t)
 plt.xlabel('Time (hrs)')
 plt.ylabel('Temperature (F)')
