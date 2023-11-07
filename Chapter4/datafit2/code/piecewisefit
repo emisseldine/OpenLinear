@@ -1,5 +1,4 @@
 import numpy as np
-import matplotlib.pyplot as plt
 
 points = np.array([[ -1.4683000758467482, -3.6948838397506325],
                    [ 1.77861565029704, -2.694779805442293],
@@ -126,6 +125,7 @@ print(np.sqrt(np.mean((y-np.polyval(f3,x))**2)))
 
 
 #Graph piecewise linear and cubic fits
+import matplotlib.pyplot as plt
 t = np.linspace(-2,2,num = 100)
 yhat = np.array([piecewise_row(x,cusps) for x in t])@f
 
