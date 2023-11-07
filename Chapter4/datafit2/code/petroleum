@@ -1,7 +1,4 @@
 import numpy as np
-import matplotlib.pyplot as plt
-
-plt.ion()
 
 #A 34-vector of the world annual petroleum consumption between 
 #1980 and 2013, in thousand barrels/day.
@@ -16,6 +13,7 @@ A = np.array([[1,k] for k in range(n)])
 
 x = np.linalg.lstsq(A,petroleum_data, rcond=None)[0]
 
+import matplotlib.pyplot as plt
 plt.scatter(np.arange(1980,2014), petroleum_data)
 plt.plot(np.arange(1980,2014), A @ x, 'r')
 plt.show()
