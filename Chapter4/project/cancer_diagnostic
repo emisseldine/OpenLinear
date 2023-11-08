@@ -27,7 +27,7 @@ cancer = load_breast_cancer()
 # print(cancer.feature_names) # 30 attributes
 # print(cancer.data)          #569 x 30 attribute matrix
 # print(cancer.target_names)  # 2 targets
-# print(cancer.target)        # 569-vector Boolean vector: 0 for no cancer, 1 for cancer
+# print(cancer.target)        # 569-vector Boolean vector: 0 for malignant, 1 for benign
 
 N  = len(cancer.data)
 
