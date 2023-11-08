@@ -15,7 +15,7 @@ def cross_validate_boolean(X,y,folds=5):
         a = np.linalg.lstsq(X[training_index],y[training_index],rcond=None)[0]
         c[k,:] = a
         training_matrix[k] = errors(y[training_index],[boolean(a @ x > 0) for x in X[training_index]])
-        test_matrix[k] = errors(IsVirginica[test_index], [boolean(a @ x > 0) for x in X[test_index]])  
+        test_matrix[k] = errors(y[test_index], [boolean(a @ x > 0) for x in X[test_index]])  
     return c,training_matrix,test_matrix
 
 ###################### IRIS EXAMPLE ##################################################
