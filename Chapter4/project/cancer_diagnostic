@@ -2,11 +2,10 @@ import numpy as np
 from sklearn.metrics import confusion_matrix as errors #true neg, false pos, false neg, true pos
 
 boolean = lambda b : 2*int(b)-1
-Boolean = lambda y : np.array([boolean(b) for b in y])
 
 def cross_validate_boolean(X,y,folds=5):
     m,n = X.shape
-    Y = Boolean(y)
+    Y = np.array([boolean(b) for b in y])
     partition = np.array_split(np.random.permutation(m),folds)
     c = np.zeros((folds,n))
     training_matrix = np.zeros((folds,2,2)) 
