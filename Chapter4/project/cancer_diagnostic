@@ -31,8 +31,8 @@ N  = len(cancer.data)
 
 X = # write your matrix/model here
   # you might need to experiment with different models to get your prediction error down
-coeffs,train_mtxs,test_mtxs = cross_validate_boolean(X, cancer.target)
   # make sure to include a constant coefficient on your model, which will be the last column of X
+coeffs,train_mtxs,test_mtxs = cross_validate_boolean(X, cancer.target)
 
 ### VERIFICATION #####
 coeff = np.mean(coeffs.T,axis=1)
