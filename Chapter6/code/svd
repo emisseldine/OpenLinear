@@ -1,0 +1,10 @@
+import numpy as np
+
+A = np.array([[-9,18,54],[-38,-49,-22]])
+
+U,sigma,VT = np.linalg.svd(A)
+print(U,"\n",
+      np.diag(sigma),"\n",
+      VT.T,"\n")
+for n in range(3):
+    print(n, U[:,:n] @ np.diag(sigma[:n]) @ VT[:n,:],"\n")
