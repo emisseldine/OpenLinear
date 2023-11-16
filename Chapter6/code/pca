@@ -18,5 +18,5 @@ _,sigma,VT = np.linalg.svd(Z)
 print(sigma)
 #%%
 k = 2
-PCA = VT[:k] @ Z.T
-print(PCA.T)
+PCA = Z @ VT[:k].T
+print(PCA)
