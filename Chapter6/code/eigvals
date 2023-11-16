@@ -1,0 +1,6 @@
+import numpy as np
+
+print(np.linalg.eigvals(
+    np.array([[1,3,3],
+              [-3,-5,-3],
+              [3,3,1]])))
