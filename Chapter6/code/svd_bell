@@ -1,11 +1,24 @@
+# requesting the image from github
+def get_image(url):
+  # we can put imports inside functions to further isolate this code
+  import io
+  import requests as re
+  from PIL import Image
+
+  get = re.get(url) # fetch the image
+  img_bytes = io.BytesIO(get.content) # create propper binary object
+  img = Image.open(img_bytes) # parse image to an image object
+
+  return img
+#%%
 import matplotlib.pyplot as plt
-from matplotlib.image import imread as img
 import numpy as np
 
-url = 'Q:\My Drive\Courses Taught\SUU-Math_2270_Linear Algebra\Open Linear Algebra\Book\Chapter6\images\Bell_Tower.jpg'
-bell = np.asarray(img(url))[:,:,0]
+url = r'https://raw.githubusercontent.com/emisseldine/OpenLinear/main/Chapter6/images/Bell_Tower.jpg'
+bell = np.asarray(get_image(url))[:,:,0]
 color = 'gist_heat' 
 
+# processing image
 plt.figure(figsize=(9,6))
 plt.imshow(bell,cmap=color)
 plt.axis('off')
