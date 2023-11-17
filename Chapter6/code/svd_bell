@@ -1,6 +1,5 @@
 # requesting the image from github
 def get_image(url):
-  # we can put imports inside functions to further isolate this code
   import io
   import requests as re
   from PIL import Image
