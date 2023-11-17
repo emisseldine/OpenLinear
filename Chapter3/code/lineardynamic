@@ -1,0 +1,17 @@
+import numpy as np
+
+x_1 = np.array([1,0,-1])
+n = len(x_1)
+T = 50
+A = np.array([[0.97, 0.1, -0.05], 
+              [-0.3, 0.99, 0.05], 
+              [0.01,-0.04, 0.96]])
+X = np.column_stack([x_1,np.zeros((n,T-1))])
+
+for t in range(T-1):
+    X[:,t+1] = A @ X[:,t]
+
+import matplotlib.pyplot as plt
+plt.plot(np.arange(T),X.T)
+plt.legend(['(x_t)_1','(x_t)_2','(x_t)_3'])
+plt.xlabel('t')
