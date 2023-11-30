@@ -45,59 +45,52 @@ b = np.zeros(4)
 T = 40
 
 import matplotlib.pyplot as plt
-#No Control
-Xno = np.zeros((T+1, len(a)))
-Xno[0] = a
-for k in range(T):
-    Xno[k+1] = A @ Xno[k]
-#yno = C @ Xno.T
+### Task 1 - No Control ###
+      #calculate the dynamical system with no control
+Xno = #Xno[t] is the state vector at time t without control
 
+# Graphing #
 for i in range(len(a)):
-    plt.plot(range(T+1), Xno[:,i])
+    plt.plot(range(T+1),Xno[:,i])
 plt.legend(['(x_t)_1','(x_t)_2','(x_t)_3','(x_t)_4'],loc='lower right')
 plt.xlabel("t\n No Control")
 plt.ylabel("(x_t)_i")
 plt.show()
 
-#Linear Quadratic Control 
+### Task 2 - Linear Quadratic Control ###
 rho = 100
-X, U, Y = lqr(A,B,C,a,b,T,rho)
+    #calculate the dynamical system with linear quadratic control
+X = #X[t] is the state vector at time t with linear quadratic control
+U = #U[t] is the control vector at time t with linear quadratic control
 
+# Graphing #
 for i in range(len(a)):
     plt.plot(range(T+1), X[:,i])
 plt.legend(['(x_t)_1','(x_t)_2','(x_t)_3','(x_t)_4'],loc='lower right')
 plt.xlabel("t\n Linear Quadratic Control")
 plt.show()
-
 for i in range(len(B[0])):
-    plt.plot(range(T), U[:,i])
+    plt.plot(range(T),U[:,i])
 plt.legend(['(u_t)_1','(u_t)_2','(u_t)_3'],loc='lower right')
 plt.xlabel("t\n Linear Quadratic Control")
 plt.show()
 
-#Linear State Feedback Control
-KT = np.zeros((len(a), len(B[0])))
-for  i in range(len(a)):
-    x,u,y = lqr(A,B,C,np.eye(1,len(a),i)[0],b,T,rho)
-    KT[i] = u[0]
-K = KT.T    
+### Task 3 - Linear State Feedback Control ###
+    #calculate the dynamical system with linear state feedback control
+K = #the state feedback gain matrix   
 print(K)
 
-ABK = A + B @ K 
-Xst = np.zeros((T+1, len(a)))
-Xst[0] = a
-for k in range(T):
-    Xst[k+1] = ABK @ Xst[k]
-Ust = np.array([K@x for x in Xst[:-1]])
+Xst = #Xst[t] is the state vector at time t with state feedback control
+Ust = #Ust[t] is the control vector at time t with state feedback control
 
+# Graphing #
 for i in range(len(a)):
-    plt.plot(range(T+1), Xst[:,i])
+    plt.plot(range(T+1),Xst[:,i])
 plt.legend(['(x_t)_1','(x_t)_2','(x_t)_3','(x_t)_4'],loc='lower right')
 plt.xlabel("t\n State Feedback Control")
 plt.show()
-
 for i in range(len(B[0])):
-    plt.plot(range(T), Ust[:,i])
+    plt.plot(range(T),Ust[:,i])
 plt.legend(['(u_t)_1','(u_t)_2','(u_t)_3'],loc='lower right')
 plt.xlabel("t\n State Feedback Control")
 plt.show()
