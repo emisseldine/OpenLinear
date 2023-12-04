@@ -35,6 +35,8 @@ for k in num_vals:
     plt.title(f"k = {k}")
     plt.axis('off')
     plt.show()
+#Analyze the quality of an image compared to data savings
+print()
 
 #%% Task 3
 k = #the rank at which the singular reduction obtains 90% of the original image's size
