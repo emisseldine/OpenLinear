@@ -17,8 +17,7 @@ styles = ['-', '--', ':', '-.']
 colors = ['#aa1bdd', '#00aae6', '#cc0000', '#fc9403']
 
 for i in range(len(x[0])): 
-    plt.plot(np.arange(T), x[:, i], styles[i], c = colors[i])
-
+    plt.plot(np.arange(T),x[:,i],styles[i],c=colors[i])
 plt.xlabel('Time t')
 plt.legend(['Susceptible','Infected','Recovered','Deceased'])
 plt.show()
