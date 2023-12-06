@@ -6,12 +6,18 @@ T = 50
 A = np.array([[0.97, 0.1, -0.05], 
               [-0.3, 0.99, 0.05], 
               [0.01,-0.04, 0.96]])
-X = np.column_stack([x_1,np.zeros((n,T-1))])
+x = np.zeros((T,len(x_1)))
+x[0] = x_1
 
 for t in range(T-1):
-    X[:,t+1] = A @ X[:,t]
+    x[t+1] = A @ x[t]
 
 import matplotlib.pyplot as plt
-plt.plot(np.arange(T),X.T)
+# Define line styles and colors for each time series
+styles = ['-', '--', ':']
+colors = ['#00aae6', '#cc0000', '#fc9403']
+
+for i in range(len(x[0])): 
+    plt.plot(np.arange(T),x[:,i], styles[i], c = colors[i])
 plt.legend(['(x_t)_1','(x_t)_2','(x_t)_3'])
 plt.xlabel('t')
