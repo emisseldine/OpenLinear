@@ -33,23 +33,23 @@ P = np.array([3.94415,3.97807,4.09693,4.11904,4.06317,4.05686,4.06638,4.03058,4.
               2.04312,1.94932,1.86427,1.73696,1.68449,1.62008,1.47107,1.45533,1.40012,1.37119,
               1.30851,1.21287,1.16142,1.07481,0.98572,0.91472,0.81421,0.71291,0.64062,0.53800,
               0.43556,0.34499,0.28139,0.21698,0.16944,0.12972,0.09522,0.06814,0.04590,0.03227, 0.050454]);   
-x = P 
+x = P               # x is the 2010 population initially, but will be used to store the predicted data
 
-A= np.vstack((b, 
+A= np.vstack((b,    # Creates the transition matrix A using the birth and death rates for each population age
               np.block([np.diag(1-d[:99]), np.zeros((99,2))]), 
               (1-d[99])*np.eye(1,101,99) + (1-d[100])*np.eye(1,101,100)))     
-year=2020
+year=2020           # The year on which to terminate the simulation
 
-import matplotlib.pyplot as plt
-plt.plot(x)
-for i in range(year-2010):
-    x = A @ x
-plt.plot(x, "--")
-plt.xlabel('Age')
-plt.ylabel('Population (millions)')
-plt.legend(['2010', str(year)])
+import matplotlib.pyplot as plt # See Appendix for explanation of plt
+plt.plot(x)         # Plots the values for 2010 (initial values)
+for i in range(year-2010): # Using 2020, this loop will run 10 times.
+    x = A @ x  
+plt.plot(x,"--") 
+plt.xlabel('Age') 
+plt.ylabel('Population (millions)') 
+plt.legend(['2010', str(year)]) 
 plt.show()
 
-print("2010 Population:", round(sum(P),1), "million")
+print("2010 Population:", round(sum(P),1), "million") # The sum is rounded to be more presentable
 print("Predicted", year, "Population:", round(sum(x),1), "million")
 print("Actual 2020 Population: 329.5 million")
