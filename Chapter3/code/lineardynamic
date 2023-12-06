@@ -16,8 +16,9 @@ import matplotlib.pyplot as plt
 # Define line styles and colors for each time series
 styles = ['-', '--', ':']
 colors = ['#00aae6', '#cc0000', '#fc9403']
+lnwth = [1,1.5,2]
 
 for i in range(len(x[0])): 
-    plt.plot(np.arange(T),x[:,i], styles[i], c = colors[i])
+    plt.plot(np.arange(T),x[:,i],styles[i],c=colors[i],linewidth=lnwth[i])
 plt.legend(['(x_t)_1','(x_t)_2','(x_t)_3'])
 plt.xlabel('t')
