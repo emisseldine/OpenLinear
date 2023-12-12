@@ -1,4 +1,3 @@
-#[class level (e.g. 1=freshmen, 2=sophmore, 3=junior, 4=senior), GPA, # of students, course evalulations]
 [[1,	2.54,	42, 	3.5],
 [1,	2.85,	33, 	4.4],
 [1,	2.92,	45, 	4.7],
