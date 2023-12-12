@@ -1,13 +1,10 @@
 import numpy as np
 
-# Define matrix A
-A = np.array([[3,-2,4],
+A = np.array([[3,-2,4],	# Define matrix A
               [-2,6,2],
               [4,2,3]])
-# Calculate eigenvalues (D) and eigenvectors (P) of matrix A using eigh (for symmetric matrices)
-D, P = np.linalg.eigh(A)
-# Print the results
-print(P,"\n",
+D, P = np.linalg.eigh(A)	# Calculate eigenvalues (D) and eigenvectors (P) of matrix A using eigh (for symmetric matrices)
+print(P,"\n",		# Print the results
       np.diag(D),"\n",
       P.T,"\n=",
       P @ np.diag(D) @ P.T,"\n")
