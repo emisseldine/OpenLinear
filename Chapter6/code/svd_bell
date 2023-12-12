@@ -1,21 +1,12 @@
-# requesting the image from github
-def get_image(url):
-  import io
-  import requests as re
-  from PIL import Image
-
-  get = re.get(url) # fetch the image
-  img_bytes = io.BytesIO(get.content) # create propper binary object
-  img = Image.open(img_bytes) # parse image to an image object
-
-  return img
-#%%
-import matplotlib.pyplot as plt
 import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.image import imread as img
+import urllib.request
 
+#import image
 url = r'https://raw.githubusercontent.com/emisseldine/OpenLinear/main/Chapter6/images/Bell_Tower.jpg'
-bell = np.asarray(get_image(url))[:,:,0]
-color = 'gist_heat' 
+bell = np.asarray(img(urllib.request.urlopen(url),'jpg'))[:,:,0]    #change 'jpg' based upon the file type of image
+color = 'gist_heat'                                                 #select a color map
 
 # processing image
 plt.figure(figsize=(9,6))
