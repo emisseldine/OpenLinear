@@ -5,8 +5,8 @@ import urllib.request
 
 #import image
 url = r'https://raw.githubusercontent.com/emisseldine/OpenLinear/main/Chapter6/images/Bell_Tower.jpg'
-bell = np.asarray(img(urllib.request.urlopen(url),'jpg'))[:,:,0]    #change 'jpg' based upon the file type of image
-color = 'gist_heat'                                                 #select a color map
+bell = np.asarray(img(urllib.request.urlopen(url),'jpg'))[:,:,0] #change 'jpg' based upon the file type of image
+color = 'gist_heat'                                              #select a color map
 
 # processing image
 plt.figure(figsize=(9,6))
