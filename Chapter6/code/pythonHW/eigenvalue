@@ -1,0 +1,22 @@
+import numpy as np
+
+### Compute the eigenvalues and eigenvectors of the matrices. ###
+### EXERCISE 1 ###
+A = np.array([[1,1],
+              [1,1]])
+# Find the eigenvalues (eigenvalsA) and eigenvectors (eigenvecsA) of A              
+print(f"A : Eigenvalues = {eigenvalsA}\n Eigenvectors =\n {eigenvecsA}")
+
+### EXERCISE 2 ###
+B = np.array([[1,0,-1],
+              [0,1,-1],
+              [1,-1,0]])
+# Find the eigenvalues (eigenvalsB) and eigenvectors (eigenvecsB) of B
+print(f"B : Eigenvalues = {eigenvalsB}\n Eigenvectors =\n {eigenvecsB}") 
+
+### EXERCISE 3 ###
+C = np.array([[1,0,1],
+              [0,-1,1],
+              [1,1,0]])
+# Find the eigenvalues (eigenvalsC) and eigenvectors (eigenvecsC) of C                          
+print(f"C : Eigenvalues = {eigenvalsC}\n Eigenvectors =\n {eigenvecsC}")
