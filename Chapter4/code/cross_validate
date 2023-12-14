@@ -6,17 +6,17 @@ def cross_validate(X,y,folds=5,display=False,label="Data",lower_x=0,upper_x=10,l
     plt.ion()
     m,n = X.shape
     partition = np.array_split(np.random.permutation(m),folds)  #randomly splits the data into (roughly) equal number of folds and represents this partition as a set of set of indices. The default number of folds is 5.
-    c = np.zeros((folds,n))                                     #initialize the regression models. c[k] is the coefficient vector for the model generated when partition[k] acts as test set                                     
-    training_error = np.zeros(folds)                            #initialize the training errors. training_error[k] is the training error for the model c[k].                                     
-    test_error = np.zeros(folds)                                #initialize the test errors. test_error[k] is the test error for the model c[k].   
+    c = np.zeros((folds,n)) #initialize the regression models. c[k] is the coefficient vector for the model generated when partition[k] acts as test set                                     
+    training_error = np.zeros(folds) #initialize the training errors. training_error[k] is the training error for the model c[k].                                     
+    test_error = np.zeros(folds) #initialize the test errors. test_error[k] is the test error for the model c[k].   
     for k in range(folds):
-        test_index = partition[k]                                       #set of indices for current test set
-        training_index = np.concatenate(partition[:k]+partition[k+1:])  #set of indices for current training set
+        test_index = partition[k]                   #set of indices for current test set
+        training_index = np.concatenate(partition[:k]+partition[k+1:]) #set of indices for current training set
         a = np.linalg.lstsq(X[training_index],y[training_index],rcond=None)[0]
-        c[k] = a                                                      #create model c[k] using least squares    
+        c[k] = a                                  #create model c[k] using least squares    
         training_error[k] = np.linalg.norm(X[training_index] @ a - y[training_index])/np.linalg.norm(y[training_index]) #compute training error of c[k]
-        test_error[k] = np.linalg.norm(X[test_index] @ a - y[test_index])/np.linalg.norm(y[test_index])                 #compute test error of c[k]
-        if display:                                                                                                     #display visualization of cross-validation if requested
+        test_error[k] = np.linalg.norm(X[test_index] @ a - y[test_index])/np.linalg.norm(y[test_index]) #compute test error of c[k]
+        if display:              #display visualization of cross-validation if requested
             plt.scatter(y[training_index], X[training_index] @ a, color='b', marker='o')
             plt.scatter(y[test_index], X[test_index] @ a, color='r', marker='x')
             plt.plot((lower_x,upper_x),(lower_y,upper_y) ,ls='--', c = 'r')
