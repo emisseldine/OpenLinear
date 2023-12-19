@@ -8,7 +8,7 @@ def multi_lstsq(As, bs, lambdas):
 
 # For each of the following, solve the multi-objective least squares problem
 # J = lambda_1J_1 + lambda_2J_2 + ... + lambda_kJ_k
-# where J_i = ||A_i @ x = b_i||**2
+# where J_i = ||A_i @ x - b_i||**2
 ### Exercise 1 ###
 # J_1
 A1 = np.array([[6, 10],
