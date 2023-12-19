@@ -12,3 +12,4 @@ b = np.array([1,2,3,5,8])
 
 x = #least squares solution
 print(x)
+#solution: x = [4.365,3.893,-1.856,-0.013]
