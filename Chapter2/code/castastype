@@ -1,0 +1,6 @@
+import numpy as np
+
+a = np.array([1, 2, 3])
+a_float = a.astype(float)
+print(a_float)
+print(np.array([1.1,2.7,3.14]).astype(int))
