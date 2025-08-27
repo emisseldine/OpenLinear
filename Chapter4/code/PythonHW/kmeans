@@ -1,4 +1,15 @@
-[[ 0.011499775310454985, -0.06353071139753803],
+###### EXERCISE 1 ####################
+# Using the k-means algorithm, find a clustering for which J^clust < epsilon, for epsilon = 5.208, k = 4. 
+# Report your initial representatives, your final representatives, your final clustering assignment, and the final clustering objective.
+X = [ [1,2,3], [4,5,6], [1,2,0], [0,0,3], [3,2,1], [2,2,0], [0,5,0], [2,3,1], [6,6,4], [9,3,2], [2,3,4], [7,5,0], [ 2,7,8] ]
+
+###### EXERCISE 2 ####################
+# Consider the following data set of n = 100 vectors.
+# Compute three different clusterings for k= 3, 4, 10 using three different randomized initializations each (hence nine clusterings). 
+# To report your clustering include a colored graphic illustrating the clustering (as demonstrated in https://github.com/emisseldine/OpenLinear/blob/main/Chapter4/code/kmeans), 
+# list the cluster representatives, and the final clustering objective for each of these three clusterings. 
+# Explain which clustering was the best of the nine.  
+X = [[ 0.011499775310454985, -0.06353071139753803],
 [ -0.26806860191340304, -0.0911109519553983],
 [ -0.33192608299119314, -0.25633299184031716],
 [ -0.1807122247382386, 0.4407823656766903],
