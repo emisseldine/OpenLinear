@@ -1,12 +1,12 @@
 import numpy as np
 
-### TASK 1 ###
 def linear_decode(H,message):
     #write code here
     #will return the decoded message if no errors
     #correct the error if possible, then decode
     #return "Error uncorrectable" if cannot be corrected
 
+### VERIFICATION ############################
 A = np.array([[1,1,1,0,0],
               [1,0,1,1,1],
               [1,1,0,1,0],
