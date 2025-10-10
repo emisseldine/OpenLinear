@@ -18,7 +18,7 @@ plt.plot(x,f)
 #create and solve your linear system here. You will need a coefficient matrix A and an augmented column b
 #Recall that np.sin(x) gives the sine function in Python, where the angle is measured in radians.
 
-c = np.linalg.lstsq(A,b,rcond=None)[0]
+c = np.linalg.solve(A,b)
 plt.plot(x,1/2+sum([c[j]*np.sin((2*j+1)*x) for j in range(25)]))
 
 plt.show()
