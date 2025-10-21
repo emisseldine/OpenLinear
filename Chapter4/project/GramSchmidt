@@ -9,6 +9,7 @@ def gram_schmidt(vectors):
     #all vectors have unit length, 
     #and there are no zero vectors among them
 
+### VERIFICATION ############################
 A = np.array([[1,1,1,1],[0,1,1,1],[0,0,1,1]]) 
 print(gram_schmidt(A))   
 
@@ -18,7 +19,8 @@ def IsIndependent_gs(vectors):
     #return True if vectors is linearly independent
     #return False if vectors is linearly dependent
     #determine this using orthogonality
-    
+
+### VERIFICATION ############################
 A = np.array([[ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
               [ 3, 2, 1, 6, 0, 0, 0, 3, 2, 1],
               [ 0, 0, 4, 2, -1, 2, 0, 0, 8, -9],
