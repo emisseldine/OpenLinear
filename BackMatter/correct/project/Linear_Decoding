@@ -1,5 +1,8 @@
 import numpy as np
 
+def linear_code(A):
+    #reuse your code here from https://github.com/emisseldine/OpenLinear/blob/main/BackMatter/correct/project/Linear_Encoding
+
 def linear_decode(H,message):
     #write code here
     #will return the decoded message if no errors
