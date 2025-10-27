@@ -1,4 +1,4 @@
-import numpy as np
+loimport numpy as np
 
 def row_scaling(coefficient_matrix, augmented_matrix, scalar, i):
     #your code from Project: Elementary Row Operations
@@ -16,7 +16,7 @@ def zero_above(coefficient_matrix, constant_matrix, pivot):
     #your code from Project: Row Reduction
 
 def forward_phase(coefficient_matrix, constant_matrix):
-    #your code from Project: RREF
+    #your code from Project: Echelon Form
 
 def backward_phase(coefficient_matrix, constant_matrix, pivots):
     #your code from Project: RREF
