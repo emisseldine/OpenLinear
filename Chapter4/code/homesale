@@ -8,19 +8,6 @@ def house_sales_data():
     # Column 4: house area in square feet.
     # Column 5: 1 if a condo, 0 otherwise.
     # Column 6: selling price in dollars.
-    """
-        house_sales_data()
-    Returns a dictionary `D` with the Sacramento house sales data
-    used in section 2.3 and chapter 13.  
-    The 6 items in the dictionary are vectors of length 774, with data for 
-    774 house sales.
-    * `D["price"]`:    selling price in 1000 dollars
-    * `D["area"]`:     area in 1000 square feet
-    * `D["beds"]`:     number of bedrooms
-    * `D["baths"]`:    number of bathrooms
-    * `D["condo"]`:    1 if a condo, 0 otherwise 
-    * `D["location"]`: an integer between 1 and 4 indicating the location.
-    """
     X = np.array([[ 2,   2,   2,    941,   1,     94905],
          [ 2,   3,   2,   1146,   0,     98937],
          [ 2,   3,   2,    909,   0,    100309],
@@ -795,6 +782,18 @@ def house_sales_data():
          [ 2,   3,   2,   1216,   0,    235000],
          [ 3,   4,   2,   1685,   0,    235301],
          [ 4,   3,   2,   1362,   0,    235738]])
+     """ house_sales_data()
+    Returns a dictionary `D` with the Sacramento house sales data
+    used in section 2.3 and chapter 13.  
+    The 6 items in the dictionary are vectors of length 774, with data for 
+    774 house sales.
+    * `D["location"]`: an integer between 1 and 4 indicating the location.
+    * `D["beds"]`:     number of bedrooms
+    * `D["baths"]`:    number of bathrooms
+    * `D["area"]`:     area in 1000 square feet
+    * `D["condo"]`:    1 if a condo, 0 otherwise 
+    * `D["price"]`:    selling price in 1000 dollars
+    """
     return { 
         "price": X[:,5] / 1000,  # selling price in 1000 dollars
         "area": X[:,3] / 1000,   # house area in 1000 square feet
@@ -802,6 +801,7 @@ def house_sales_data():
         "baths": X[:,2],         # number of bathrooms
         "condo": X[:,4],         # 1 if condo, 0 otherwise 
         "location": X[:,0]}     # location (1,2,3,4)
+    
 D = house_sales_data()
 y = D["price"]
 x = np.column_stack((D["area"], D["beds"], np.ones(len(y)))) 
@@ -823,7 +823,7 @@ print("y = $" + str(int(y1*1000)), "\n")
 x2 = np.array([1.324, 2])
 y2 = 234.50
 print("y_hat = $" + str(int(round(y_hat(x2),0))*1000))
-print("y = $" + str(int(y1*1000)), "\n")
+print("y = $" + str(int(y2*1000)), "\n")
 
 predicted = a_hat @ x.T
 
