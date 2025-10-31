@@ -782,7 +782,7 @@ def house_sales_data():
          [ 2,   3,   2,   1216,   0,    235000],
          [ 3,   4,   2,   1685,   0,    235301],
          [ 4,   3,   2,   1362,   0,    235738]])
-     """ house_sales_data()
+    """ house_sales_data()
     Returns a dictionary `D` with the Sacramento house sales data
     used in section 2.3 and chapter 13.  
     The 6 items in the dictionary are vectors of length 774, with data for 
