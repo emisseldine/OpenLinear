@@ -25,7 +25,7 @@ D = # construct the Constraint Matrix HERE
 coeffs = lstsq_constraint(A,y,D,np.zeros(len(D)))
 
 
-### Graph the Cubic Spline #####
+### Graphing #####
 import matplotlib.pyplot as plt
 
 xpl_left = np.linspace(-3,-1,M)
