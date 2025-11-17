@@ -155,16 +155,14 @@ P =  12 #period
 m = len(y)
 k =  m // P  # number of periods
 
-#Graph Airport Data
+A = #Write your matrix here to solve this AR least squares problem.
+
+## Verification ########
+print(A)
+x = np.linalg.lstsq(A,y, rcond=None)[0]
+
 plt.ion()
 plt.plot(range(m), y)
-plt.show()
-
-#Solve and graph Least Squares Solution
-A = #Write your matrix here to solve this AR least squares problem.
-print(A)
-
-x = np.linalg.lstsq(A,y, rcond=None)[0]
 plt.scatter(range(m), y)
 plt.plot(range(m), A @ x, 'r')
 plt.show()
