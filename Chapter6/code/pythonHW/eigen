@@ -19,11 +19,11 @@ B = np.array([[1,0,-1],
 # Find the eigenvalues (eigenvalsB) and eigenvectors (eigenvecsB) of B
 print(f"B : Eigenvalues = {eigenvalsB}\n Eigenvectors =\n {eigenvecsB}") 
 ## solution:
-#B : Eigenvalues = [-2.07877115e-16  1.00000001e+00  9.99999985e-01]
+#B : Eigenvalues = [-1.  1.  2.]
 # Eigenvectors =
-# [[-5.77350269e-01 -7.07106776e-01  7.07106786e-01]
-# [-5.77350269e-01 -7.07106786e-01  7.07106776e-01]
-# [-5.77350269e-01  1.04280050e-08  1.04280050e-08]]
+# [[ 4.08248290e-01 -7.07106781e-01  5.77350269e-01]
+# [ 4.08248290e-01  7.07106781e-01  5.77350269e-01]
+# [ 8.16496581e-01  7.88210995e-17 -5.77350269e-01]]
 
 ### EXERCISE 3 ###
 C = np.array([[1,0,1],
