@@ -15,10 +15,10 @@ xright = np.random.random(M)
 x = np.hstack([xleft, xright])
 y = np.power(x,3) - x + 0.4/(1+25*np.power(x,2)) + 0.05*np.random.normal(size = 2*M)
 
-A = np.vstack([np.hstack([np.vander(xleft,n+1), np.zeros((M,n+1))]), 
-                np.hstack([np.zeros((M,n+1)), np.vander(xright,n+1)])])
-D = np.vstack((np.hstack([np.zeros(n), 1, np.zeros(n), -1]), 
-                np.hstack([np.zeros(n-1), 1, 0, np.zeros(n-1), -1, 0])))
+A = np.block([[np.vander(xleft,n+1), np.zeros((M,n+1))], 
+                [np.zeros((M,n+1)), np.vander(xright,n+1)]])
+D = np.block([[np.zeros(n), 1, np.zeros(n), -1], 
+                [np.zeros(n-1), 1, 0, np.zeros(n-1), -1, 0]])
 coeffs = lstsq_constraint(A,y,D,np.zeros(2))
 
 # Graphing
