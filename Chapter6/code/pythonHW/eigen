@@ -15,7 +15,7 @@ print(f"A : Eigenvalues = {eigenvalsA}\n Eigenvectors =\n {eigenvecsA}")
 ### EXERCISE 2 ###
 B = np.array([[1,0,-1],
               [0,1,-1],
-              [1,-1,0]])
+              [-1,-1,0]])
 # Find the eigenvalues (eigenvalsB) and eigenvectors (eigenvecsB) of B
 print(f"B : Eigenvalues = {eigenvalsB}\n Eigenvectors =\n {eigenvecsB}") 
 ## solution:
