@@ -22,7 +22,7 @@ X = # construct the Coefficient Matrix HERE
 D = # construct the Constraint Matrix HERE
     
 # Solve constrained least squares problem Xc=y subject to Dc = 0
-coeffs = lstsq_constraint(A,y,D,np.zeros(len(D)))
+coeffs = lstsq_constraint(X,y,D,np.zeros(len(D)))
 
 
 ### Graphing #####
