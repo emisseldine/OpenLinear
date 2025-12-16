@@ -1,0 +1,16 @@
+import numpy as np
+
+### EXERCISE 1#################################################
+# Which vector among Y is closest to x?
+x = np.array([1,2,3,4,5])
+
+Y = np.array([[0,0,0,0,0],
+              [3,-2,1,0,4],
+              [-2,1,3,-1,2],
+              [3,3,3,3,3],
+              [5,4,3,2,1]])
+
+dists = np.zeros(len(Y))
+# compute distances between x and Y[i]
+print(np.argmin(dists), Y[np.argmin(dists)]) #np.argmin(<list>) returns the index of the min of <list>
+#solution = Y[3]
