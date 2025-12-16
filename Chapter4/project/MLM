@@ -1,15 +1,6 @@
 import numpy as np
 
-def ranking(names, scores): #A function to sort the names of mathletes by their scores.
-    ranks = []
-    temp_scores = scores.copy()
-    temp_names = names.copy()
-    for i in range(len(names)):
-        winner = np.argmax(temp_scores)
-        ranks.append(temp_names[winner])
-        temp_names.remove(temp_names[winner])
-        temp_scores.remove(temp_scores[winner])
-    return ranks
+ranking = lambda names, scores : np.array(names)[np.argsort(-scores)] #A function to sort the names of mathletes by their scores.
         
 names = ["Pete Weyl", "Karla Gauss", "Hermie Wielandt", "Artie Cayley", "Emmy Noether", 
 "Evie Galois", "Rowan \"Quaternion\" Hamilton", "Dave Hilbert", "Sophie Lie", "Jorge Frobenius", 
