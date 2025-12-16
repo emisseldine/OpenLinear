@@ -46,6 +46,7 @@ print(J_clust)
 grps = [[X[i,:] for i in range(len(X)) if labels[i]==j] for j in range(k)]
 for i in range(k):
     plt.scatter([c[0] for c in grps[i]],[c[1] for c in grps[i]])
+plt.scatter([z[0] for z in reps],[z[1] for z in reps],c='black',marker='x',s=50)
 plt.xlim(-2,3)
 plt.ylim(-2,3)
 plt.show()
